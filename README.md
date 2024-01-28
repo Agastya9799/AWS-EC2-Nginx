@@ -122,7 +122,7 @@ Part of the reason Nginx scales so effectively and runs faster than other Web se
 Nginx is important because it was purposely built for extreme loads and efficiency. The Web server software helps with several aspects of hosting Web site applications and content delivery services. Nginx is the second-most popular Web server software after Apache.
 ## Installation steps for Nginx Server:
 ### Step-1: Setup Yum repo for RHEL/CENTOS.
-Command  sudo vi /etc/yum.repos.d/nginx.repo
+	sudo vi /etc/yum.repos.d/nginx.repo
 ### Step-2: Add the following to the nginx.repo
 [nginx] 
 name=nginx repo	
@@ -130,9 +130,9 @@ baseurl=https://nginx.org/packages/centos/8/$basearch/
 gpgcheck=0
 enabled=1
 ### Step-3: Update Yum repo
-Command  sudo yum update
+	sudo yum update
 ### Step-4: Install NGINX Open source package:
-Command  sudo yum install nginx
+	sudo yum install nginx
 
 
 
