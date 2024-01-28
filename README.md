@@ -198,9 +198,9 @@ And leave remaining options and select the create __“load balancer option”__
  
 ## Step-19:
 Now you can see your load balancer is in an active state. By clicking on the details of load balancer, you need to copy the DNS-name. 
-![step19](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/6b342deb-eb2d-46ab-b4c0-6c8373637fc7) 
-After copying the DNS-name, paste it on the new tab in your browser and search that link. Then you need to get output as below figure. If not, please very the EC2 instance you have created. 
  ![Step-19](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/206ebefa-2ab2-4cc4-9b64-1e69b1cf6ba0)
+After copying the DNS-name, paste it on the new tab in your browser and search that link. Then you need to get output as below figure. If not, please very the EC2 instance you have created. 
+![step19](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/6b342deb-eb2d-46ab-b4c0-6c8373637fc7) 
 ## Step-20:
 Now select the Auto Scaling Group on your EC2 instance. And select the __“Create Auto Scaling Group”__ option.
 ![step20](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/828966f6-1939-4ebb-b6c3-8e6ef5495ae0) 
