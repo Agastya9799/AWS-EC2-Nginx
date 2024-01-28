@@ -142,7 +142,7 @@ Nginx is important because it was purposely built for extreme loads and efficien
 
 ## Step-1:
 Launch an EC2 instance by clicking on the __“Launch instance”__ option.
-![alt text]("C:\Users\agast\Desktop\step1.png")
+![step1](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/9cbc615e-2efa-461c-8b24-b7b8c8d9132e)
 ## Step-2:
 Give a name of your wish for your EC2 instance.
  
