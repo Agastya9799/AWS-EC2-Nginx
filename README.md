@@ -2,11 +2,11 @@
 Deploy Nginx Server on port 80 in EC2 instance. This instance should be behind the ASG and ELB. For ASG configuration minimum instance is 1, desired is 2 and maximum is 3.
 
 
-# Deploy Nginx Server on EC2 Instance
+# Deploy Nginx Server on EC2 Instance:
 	In this topic you were going to learn about the Nginx Server and how to deploy Nginx Server on EC2 instance. What I am going to perform here is to deploy on Nginx server on port 80 on EC2 instance and  
 this EC2 instance should be behind the Auto Scaling groups (ASG) and Elastic Load Balancer (ELB). For Auto Scaling Groups (ASG) I am going to set the minimum instance to 1, and desired instance to 2 and maximum instance to 3. 
 
-Table of Contents:
+# Table of Contents:
 1.	Introduction 
 2.	Elastic Cloud Compute (EC2)
 3.	Elastic Load Balancer (ELB)
@@ -15,17 +15,17 @@ Table of Contents:
 6.	Installation steps for Nginx Server
 7.	Steps to deploy Nginx Server on EC2 instances.
 
-Introduction:
+# Introduction:
 	To learn about this completely you need to learn about different concepts here. Firstly, we need to learn about the EC2 instances and how you were going to launch an EC2 instances in AWS. I will show you how you were going to launch an EC2 instance in real time. Secondly, you need to know about Elastic Load Balancer (ELB) and Auto Scaling Groups (ASG). Lastly, you need to learn about the steps that are involved in deploying a Nginx Server on EC2 instance and how you were going to start the server and other operations of it.
 
-Elastic Cloud Compute (EC2):
+# Elastic Cloud Compute (EC2):
 Amazon Elastic Compute Cloud (Amazon EC2) offers the broadest and deepest compute platform, with over 750 instances and choice of the latest processor, storage, networking, operating system, and purchase model to help you best match the needs of your workload. They are the first major cloud provider that supports Intel, AMD, and Arm processors, the only cloud with on-demand EC2 Mac instances, and the only cloud with 400 Gbps Ethernet networking. They offer the best price performance for machine learning training, as well as the lowest cost per inference instances in the cloud. More SAP, high performance computing (HPC), ML, and Windows workloads run on AWS than any other cloud.
 Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can reduce capacity (scale down) again.
 The following diagram shows a basic architecture of an Amazon EC2 instance deployed within an Amazon Virtual Private Cloud (VPC). In this example, the EC2 instance is within an Availability Zone in the Region. The EC2 instance is secured with a security group, which is a virtual firewall that controls incoming and outgoing traffic. A private key is stored on the local computer and a public key is stored on the instance. Both keys are specified as a key pair to prove the identity of the user. In this scenario, the instance is backed by an Amazon EBS volume. The VPC communicates with the internet using an internet gateway.
   
 
 
-Features of Amazon EC2:
+# Features of Amazon EC2:
 Amazon EC2 provides the following high-level features:
 Instances:
 The EC2 instances, whatever we are going to create or created are virtual servers.
