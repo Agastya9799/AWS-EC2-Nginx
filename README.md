@@ -258,7 +258,7 @@ Now go to instances and select Nginx Instance. After clicking on the connect but
 Now you can see the option “connect to instance”. Then choose the connection type as “connect using EC2 instance connect”. Leave the username as default i.e. ec2-user. Then click on Connect.
    
 ## Step-37: 
-After that you will get output displaying the “Amazon Linux 2023” and the login details. Now you need to right command after the $. Here you are going to so first step of nginx server installation i.e. you are going to right the command below.<--2
+After that you will get output displaying the “Amazon Linux 2023” and the login details. Now you need to right command after the $. Here you are going to so first step of nginx server installation i.e. you are going to right the command below.
 Sudo vi /etc/yum.repos.d/nginx.repo
  
 If the command is executed in the cloud shell, then you get the output that shown in below image.
@@ -269,35 +269,47 @@ Next you need to insert the code which we have seen in step-2 of nginx server in
 Now you can see the output screen as below.
  
 
-Step-39: Next you need to give the code i.e. “sudo yum update” and press enter button.
+## Step-39: 
+Next you need to give the code i.e. “sudo yum update” and press enter button.
  
 Now the code will run and yum will be updated. Please wait for some time to update. Then you can see the yum update process has completed and it shows all the process had done and complete word to you.
  
 
-Step-40: Next you need to write the code i.e. “sudo yum install nginx” and press enter. Then you can get the option displaying as “Is this ok [Y/N]” and you need enter Y and press enter key.
+## Step-40:
+Next you need to write the code i.e. “sudo yum install nginx” and press enter. Then you can get the option displaying as “Is this ok [Y/N]” and you need enter Y and press enter key.
  
 And after entering Y, your transaction will start. It will take some time to complete the installation. If the installation is completed, then you can see the complete line below. 
  
-Step-41: Now we need to check the status of the of nginx by writing the code as “systemctl status nginx” and press enter key then you can get the status as “Inactive” in the screen.
+## Step-41: 
+Now we need to check the status of the of nginx by writing the code as “systemctl status nginx” and press enter key then you can get the status as “Inactive” in the screen.
  
-Step-42: You see that nginx is inactive(dead). To start your nginx server you need to give the code i.e. “systemctl start nginx” and press enter then the nginx will be started and if you need to check whether nginx is started the give code that have give before which is used to check the status of the nginx. If you start nginx, in background the nginx server will start running. To check the status that nginx server running or not, use the command i.e. “systemctl status nginx”. 
+## Step-42:
+You see that nginx is inactive(dead). To start your nginx server you need to give the code i.e. “systemctl start nginx” and press enter then the nginx will be started and if you need to check whether nginx is started the give code that have give before which is used to check the status of the nginx. If you start nginx, in background the nginx server will start running. To check the status that nginx server running or not, use the command i.e. “systemctl status nginx”. 
  
-Step-43: Then next you are going to give the curl command i.e. “curl -I 127.0.01” which is used to verify the nginx server. Then you can see all the details of nginx as shown in below image.
+## Step-43:
+Then next you are going to give the curl command i.e. “curl -I 127.0.01” which is used to verify the nginx server. Then you can see all the details of nginx as shown in below image.
  
-Step-44: Nginx stores its configuration files with “cd /etc/nginx/” and use “ls -ltr” command to display all the files.
+## Step-44:
+Nginx stores its configuration files with “cd /etc/nginx/” and use “ls -ltr” command to display all the files.
  
-Step-45: After the above step, to see the nginx configuration you need to give this command i.e. “less nginx.conf”. Then you can see the documentation type of nginx, user setup, and other configuration details also.
+## Step-45:
+After the above step, to see the nginx configuration you need to give this command i.e. “less nginx.conf”. Then you can see the documentation type of nginx, user setup, and other configuration details also.
  
-Step-46: To see the html code of your webpage, you need to give the command “cd /usr/share//nginx/html/” and go to the location by giving “ls -ltr”. Then you can see the html files and some image files also.
+## Step-46:
+To see the html code of your webpage, you need to give the command “cd /usr/share//nginx/html/” and go to the location by giving “ls -ltr”. Then you can see the html files and some image files also.
  
-Step-47: To see the html file use “less index.file”, then you see the html file and if you need you can edit the file as you needs.
+## Step-47:
+To see the html file use “less index.file”, then you see the html file and if you need you can edit the file as you needs.
  
-Step-48: Now use “ifconfig” command to see the IP address of your web server.
+## Step-48:
+Now use “ifconfig” command to see the IP address of your web server.
  
 
-Step-49: Next go to the instances. Now we are going to request our web server does it working properly or not by copying our instance Public IPv4 address or Private IPv4 address.
+## Step-49:
+Next go to the instances. Now we are going to request our web server does it working properly or not by copying our instance Public IPv4 address or Private IPv4 address.
  
-Step-50: After copying the IPv4 address, paste the address in the new tab then you can see the webpage below. If you don’t get the output, please check all the steps, then you can get the result.
+## Step-50: 
+After copying the IPv4 address, paste the address in the new tab then you can see the webpage below. If you don’t get the output, please check all the steps, then you can get the result.
  
 
 
