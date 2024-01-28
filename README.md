@@ -85,8 +85,8 @@ The following diagrams demonstrate the effect of cross-zone load balancing with 
 If cross-zone load balancing is enabled, each of the 10 targets receives 10% of the traffic. This is because each load balancer node can route its 50% of the client traffic to all 10 targets.
  
 If cross-zone load balancing is disabled:
-•	Each of the two targets in Availability Zone A receives 25% of the traffic.
-•	Each of the eight targets in Availability Zone B receives 6.25% of the traffic.
+* Each of the two targets in Availability Zone A receives 25% of the traffic.
+* Each of the eight targets in Availability Zone B receives 6.25% of the traffic.
 This is because each load balancer node can route its 50% of the client traffic only to targets in its Availability Zone.
  
 
@@ -109,8 +109,8 @@ An Auto Scaling group starts by launching enough instances to meet its desired c
 You can use scaling policies to increase or decrease the number of instances in your group dynamically to meet changing conditions. When the scaling policy is in effect, the Auto Scaling group adjusts the desired capacity of the group, between the minimum and maximum capacity values that you specify and launches or terminates the instances as needed. You can also scale on a schedule. 
 When creating an Auto Scaling group, you can choose whether to launch On-Demand Instances, Spot Instances, or both. You can specify multiple purchase options for your Auto Scaling group only when you use a launch template.
 Spot Instances provide you with access to unused EC2 capacity at steep discounts relative to On-Demand prices There are key differences between Spot Instances and On-Demand Instances:
-•	The price for Spot Instances varies based on demand.
-•	Amazon EC2 can terminate an individual Spot Instance as the availability of, or price for, Spot Instances changes.
+* The price for Spot Instances varies based on demand.
+* Amazon EC2 can terminate an individual Spot Instance as the availability of, or price for, Spot Instances changes.
 When a Spot Instance is terminated, the Auto Scaling group attempts to launch a replacement instance to maintain the desired capacity for the group.
 When instances are launched, if you specify multiple Availability Zones, the desired capacity is distributed across these Availability Zones. If a scaling action occurs, Amazon EC2 Auto Scaling automatically maintains balance across all the Availability Zones that you specify.
 
