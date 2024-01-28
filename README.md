@@ -6,7 +6,7 @@ Deploy Nginx Server on port 80 in EC2 instance. This instance should be behind t
 	In this topic you were going to learn about the Nginx Server and how to deploy Nginx Server on EC2 instance. What I am going to perform here is to deploy on Nginx server on port 80 on EC2 instance and this EC2 instance should be behind the Auto Scaling groups (ASG) and Elastic Load Balancer (ELB). For Auto Scaling Groups (ASG) I am going to set the minimum instance to 1, and desired instance to 2 and maximum instance to 3. 
 
 # Table of Contents:
-1.	Introduction 
+1.	Introduction
 2.	Elastic Cloud Compute (EC2)
 3.	Elastic Load Balancer (ELB)
 4.	Auto Scaling Groups (ASG)
@@ -124,7 +124,11 @@ Nginx is important because it was purposely built for extreme loads and efficien
 ### Step-1: Setup Yum repo for RHEL/CENTOS.
 Command  sudo vi /etc/yum.repos.d/nginx.repo
 ### Step-2: Add the following to the nginx.repo
-	[nginx]   												name=nginx repo											baseurl=https://nginx.org/packages/centos/8/$basearch/							gpgcheck=0												enabled=1
+[nginx] 
+name=nginx repo	
+baseurl=https://nginx.org/packages/centos/8/$basearch/
+gpgcheck=0
+enabled=1
 ### Step-3: Update Yum repo
 Command  sudo yum update
 ### Step-4: Install NGINX Open source package:
@@ -137,20 +141,20 @@ Command  sudo yum install nginx
 # Steps to deploy Nginx Server on EC2 instances:
 
 ## Step-1:
-Launch an EC2 instance by clicking on the “Launch instance” option.
+Launch an EC2 instance by clicking on the __“Launch instance”__ option.
 
  
 ## Step-2:
 Give a name of your wish for your EC2 instance.
  
 ## Step-3:
-After giving name for an EC2 instance, then we need to select the Amazon Machine Image (AMI). There are many AMIs available in Amazon EC2. But here I am going to select the “Amazon Linux 2023 AMI” which is a free tier eligible. And you also have many other options, you can select whatever AMI you need for your instance. Red Hat AMI is the popularly used AMI.
+After giving name for an EC2 instance, then we need to select the Amazon Machine Image (AMI). There are many AMIs available in Amazon EC2. But here I am going to select the __“Amazon Linux 2023 AMI”__ which is a free tier eligible. And you also have many other options, you can select whatever AMI you need for your instance. Red Hat AMI is the popularly used AMI.
   
 ## Step-4: 
-Next you need to select the Instance type for your instance. There will be many options available for you, but I am going to select the “t2.micro” which is a free tier eligible Instance type. Next you need to give the Key Pair to instance by clicking on “create a new key pair” option. Neglect if you have created a key pair. And select the key pair which you created.
+Next you need to select the Instance type for your instance. There will be many options available for you, but I am going to select the __“t2.micro”__ which is a free tier eligible Instance type. Next you need to give the Key Pair to instance by clicking on __“create a new key pair”__ option. Neglect if you have created a key pair. And select the key pair which you created.
  
 ## Step-5:
-In the Network Settings, you need to select the create security group option which helps you to create security group automatically called “launch-wizard-1” or any other name you could get if you created many instances before this. Next you need to select “Allow SSH traffic from” and “Allow HTTP traffic from the internet” options that will create SSH in port range 22 and for HTTP in port range 80. And leave the remaining as default.
+In the Network Settings, you need to select the create security group option which helps you to create security group automatically called __“launch-wizard-1”__ or any other name you could get if you created many instances before this. Next you need to select “Allow SSH traffic from” and “Allow HTTP traffic from the internet” options that will create SSH in port range 22 and for HTTP in port range 80. And leave the remaining as default.
  
 ## Step-6:
 Leave the configure settings as default. Or if you like to change the settings you can select whatever size you need and the root volume type. If you would like to give the file system, then select the file system option which is below. But here in this step I am going to leave it as default configure settings.
@@ -158,16 +162,16 @@ Leave the configure settings as default. Or if you like to change the settings y
 ## Step-7:
 In advanced details leave all the options but in user data you need to give some commands to it. After select the launch instance option that will create your EC2 instance within seconds. You can the code in the below image.
  
-You can see that your EC2 instance state is “Running”. 
+You can see that your EC2 instance state is __“Running”__. 
  
 ## Step-8:
-After creating an EC2 instance, now you need to create a load balancer. Firstly, you need to select “Load Balancers” option which is on the left side and you can see the load balancers content box. There you need to select the “Create load balancer” option.
+After creating an EC2 instance, now you need to create a load balancer. Firstly, you need to select __“Load Balancers”__ option which is on the left side and you can see the load balancers content box. There you need to select the __“Create load balancer”__ option.
  
 ## Step-9:
-Now you need to select the Application Load Balancer (ALB) because here you will deal with the HTTP and HTTPS traffic, and it is the best option also. Then select the “create” option.
+Now you need to select the Application Load Balancer (ALB) because here you will deal with the HTTP and HTTPS traffic, and it is the best option also. Then select the __“create”__ option.
  
 ## Step-10:
-In Basic Configuration, you need to give your load balancer name. You need to select the scheme type as “Internet-facing” and the IP address type as “IPv4”. 
+In Basic Configuration, you need to give your load balancer name. You need to select the scheme type as __“Internet-facing”__ and the IP address type as __“IPv4”__. 
  
 ## Step-11:
 In network mapping leave the VPC as default and select the Availability Zones at least 2 but here you need to select all three AZs.
@@ -176,24 +180,24 @@ In network mapping leave the VPC as default and select the Availability Zones at
 In security groups, select the security group which you have given to your EC2 instance. And in listeners and routing select the listener as HTTP:80 where HTTP is a protocol and 80 is a port. And also you need to create a new target group for your load balancer.
  
 ## Step-13:
-In basic configuration, choose the target type as “Instance”.
+In basic configuration, choose the target type as __“Instance”__.
  
 ## Step-14:
 Give the target group name and select protocol as HTTP and Port number as 80. Select IP address type as IPv4 and protocol version as HTTP1. Leave VPC as default.
  
 
 ## Step-15:
-Leave the health check as default and click on “Next”. 
+Leave the health check as default and click on __“Next”__. 
  
 ## Step-16:
-Select the instance that you have created and select the “include as pending below” option. Then select the “create target group” option.
+Select the instance that you have created and select the __“include as pending below”__ option. Then select the __“create target group”__ option.
  
 
 ## Step-17:
 Now come back to load balancer creation and select the target group that which you have created.
  
 ## Step-18:
-And leave remaining options and select the create “load balancer option”.
+And leave remaining options and select the create __“load balancer option”__.
  
 
 ## Step-19:
@@ -202,10 +206,10 @@ Now you can see your load balancer is in an active state. By clicking on the det
 After copying the DNS-name, paste it on the new tab in your browser and search that link. Then you need to get output as below figure. If not, please very the EC2 instance you have created. 
  
 ## Step-20:
-Now select the Auto Scaling Group on your EC2 instance. And select the “Create Auto Scaling Group” option.
+Now select the Auto Scaling Group on your EC2 instance. And select the __“Create Auto Scaling Group”__ option.
  
 ## Step-21:
-In “Choose launch template” enter the name for auto scaling group. And select the “Create a launch template”.
+In __“Choose launch template”__ enter the name for auto scaling group. And select the __“Create a launch template”__.
  
 
 ## Step-22:
@@ -219,7 +223,7 @@ Here you need to select Amazon Machine Image as Amazon Linux 2023 AMI.
 Select the instance type as t2.micro and key pair as Nginx Tutorial.
  
 ## Step-25: 
-Do not select the subnet leave it as empty (ignore in the fig). Then select the “existing security group” Launch-wizard-4 which is also same for the EC2 you have created. 
+Do not select the subnet leave it as empty (ignore in the fig). Then select the __“existing security group”__ Launch-wizard-4 which is also same for the EC2 you have created. 
  
 ## Step-26:
 Leave the remaining all as default and click on the create launch template. Then the launch template will be created.
@@ -231,19 +235,19 @@ Now come back to the launch template and select the launch template that you hav
 In choose instance launch options, in network select all the three availability zones and leave VPS as default. Then click on the next button.
  
 ## Step-29: 
-In configure advanced option step, select load balancing option as “attach to an existing load balancer’ and choose the target group that you have created by selecting the “choose from your load balancers target group” option.
+In configure advanced option step, select load balancing option as __“attach to an existing load balancer"__ and choose the target group that you have created by selecting the __“choose from your load balancers target group”__ option.
  
 ## Step-30:
 Now turn on Elastic Load Balancing health checks and set health check grace period to 300 seconds. Next leave other options and click on the next button.
  
 ## Step-31:
-Now you need to mention group size as how many instances need to be created. The Minimum desired capacity is 1, desired capacity is 2 and maximum desired capacity is 3. And select the automatic scaling to “No scaling policies”. 
+Now you need to mention group size as how many instances need to be created. The Minimum desired capacity is 1, desired capacity is 2 and maximum desired capacity is 3. And select the automatic scaling to __“No scaling policies”__. 
  
 ## Step-32:
-Next in Instance maintenance policy select the “No policy” option.
+Next in Instance maintenance policy select the __“No policy”__ option.
  
 ## Step-33:
-Next steps notifications and tags leave it as empty and in the review, step click on “Create Auto Scale Group”. 
+Next steps notifications and tags leave it as empty and in the review, step click on __“Create Auto Scale Group”__. 
  
 
 ## Step-34:
@@ -254,54 +258,61 @@ Now go to instances and select Nginx Instance. After clicking on the connect but
  
 
 ## Step-36:
-Now you can see the option “connect to instance”. Then choose the connection type as “connect using EC2 instance connect”. Leave the username as default i.e. ec2-user. Then click on Connect.
+Now you can see the option __“connect to instance”__. Then choose the connection type as __“connect using EC2 instance connect”__. Leave the username as default i.e. ec2-user. Then click on Connect.
    
 ## Step-37: 
-After that you will get output displaying the “Amazon Linux 2023” and the login details. Now you need to right command after the $. Here you are going to so first step of nginx server installation i.e. you are going to right the command below.
-Sudo vi /etc/yum.repos.d/nginx.repo
+After that you will get output displaying the __“Amazon Linux 2023”__ and the login details. Now you need to right command after the $. Here you are going to so first step of nginx server installation i.e. you are going to right the command below.
+__Sudo vi /etc/yum.repos.d/nginx.repo__
  
 If the command is executed in the cloud shell, then you get the output that shown in below image.
  
 ## Step-38:
-Next you need to insert the code which we have seen in step-2 of nginx server installation. And you need to give “:wq” to save the file.
+Next you need to insert the code which we have seen in step-2 of nginx server installation. 
+__[nginx]
+Name=nginx repo
+Baseurl=https://nginx.org/packages/centos/8/$basearch/
+Gpgcheck=0
+Enabled=1__
+
+And you need to give __“:wq”__ to save the file.
  
 Now you can see the output screen as below.
  
 
 ## Step-39: 
-Next you need to give the code i.e. “sudo yum update” and press enter button.
+Next you need to give the code i.e. __“sudo yum update”__ and press enter button.
  
 Now the code will run and yum will be updated. Please wait for some time to update. Then you can see the yum update process has completed and it shows all the process had done and complete word to you.
  
 
 ## Step-40:
-Next you need to write the code i.e. “sudo yum install nginx” and press enter. Then you can get the option displaying as “Is this ok [Y/N]” and you need enter Y and press enter key.
+Next you need to write the code i.e. __“sudo yum install nginx”__ and press enter. Then you can get the option displaying as __“Is this ok [Y/N]”__ and you need enter Y and press enter key.
  
 And after entering Y, your transaction will start. It will take some time to complete the installation. If the installation is completed, then you can see the complete line below. 
  
 ## Step-41: 
-Now we need to check the status of the of nginx by writing the code as “systemctl status nginx” and press enter key then you can get the status as “Inactive” in the screen.
+Now we need to check the status of the of nginx by writing the code as __“systemctl status nginx”__ and press enter key then you can get the status as “Inactive” in the screen.
  
 ## Step-42:
-You see that nginx is inactive(dead). To start your nginx server you need to give the code i.e. “systemctl start nginx” and press enter then the nginx will be started and if you need to check whether nginx is started the give code that have give before which is used to check the status of the nginx. If you start nginx, in background the nginx server will start running. To check the status that nginx server running or not, use the command i.e. “systemctl status nginx”. 
+You see that nginx is inactive(dead). To start your nginx server you need to give the code i.e. __“systemctl start nginx”__ and press enter then the nginx will be started and if you need to check whether nginx is started the give code that have give before which is used to check the status of the nginx. If you start nginx, in background the nginx server will start running. To check the status that nginx server running or not, use the command i.e. __“systemctl status nginx”__. 
  
 ## Step-43:
-Then next you are going to give the curl command i.e. “curl -I 127.0.01” which is used to verify the nginx server. Then you can see all the details of nginx as shown in below image.
+Then next you are going to give the curl command i.e. __“curl -I 127.0.01”__ which is used to verify the nginx server. Then you can see all the details of nginx as shown in below image.
  
 ## Step-44:
-Nginx stores its configuration files with “cd /etc/nginx/” and use “ls -ltr” command to display all the files.
+Nginx stores its configuration files with __“cd /etc/nginx/”__ and use __“ls -ltr”__ command to display all the files.
  
 ## Step-45:
-After the above step, to see the nginx configuration you need to give this command i.e. “less nginx.conf”. Then you can see the documentation type of nginx, user setup, and other configuration details also.
+After the above step, to see the nginx configuration you need to give this command i.e. __“less nginx.conf”__. Then you can see the documentation type of nginx, user setup, and other configuration details also.
  
 ## Step-46:
-To see the html code of your webpage, you need to give the command “cd /usr/share//nginx/html/” and go to the location by giving “ls -ltr”. Then you can see the html files and some image files also.
+To see the html code of your webpage, you need to give the command __“cd /usr/share//nginx/html/”__ and go to the location by giving __“ls -ltr”__. Then you can see the html files and some image files also.
  
 ## Step-47:
-To see the html file use “less index.file”, then you see the html file and if you need you can edit the file as you needs.
+To see the html file use __“less index.file”__, then you see the html file and if you need you can edit the file as you needs.
  
 ## Step-48:
-Now use “ifconfig” command to see the IP address of your web server.
+Now use __“ifconfig”__ command to see the IP address of your web server.
  
 
 ## Step-49:
