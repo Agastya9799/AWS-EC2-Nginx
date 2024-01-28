@@ -3,7 +3,7 @@ Deploy Nginx Server on port 80 in EC2 instance. This instance should be behind t
 
 
 # Deploy Nginx Server on EC2 Instance:
-	In this topic you were going to learn about the Nginx Server and how to deploy Nginx Server on EC2 instance. What I am going to perform here is to deploy on Nginx server on port 80 on EC2 instance and this EC2 instance should be behind the Auto Scaling groups (ASG) and Elastic Load Balancer (ELB). For Auto Scaling Groups (ASG) I am going to set the minimum instance to 1, and desired instance to 2 and maximum instance to 3. 
+In this topic you were going to learn about the Nginx Server and how to deploy Nginx Server on EC2 instance. What I am going to perform here is to deploy on Nginx server on port 80 on EC2 instance and this EC2 instance should be behind the Auto Scaling groups (ASG) and Elastic Load Balancer (ELB). For Auto Scaling Groups (ASG) I am going to set the minimum instance to 1, and desired instance to 2 and maximum instance to 3. 
 
 # Table of Contents:
 1.	Introduction
@@ -15,7 +15,7 @@ Deploy Nginx Server on port 80 in EC2 instance. This instance should be behind t
 7.	Steps to deploy Nginx Server on EC2 instances.
 
 # Introduction:
-	To learn about this completely you need to learn about different concepts here. Firstly, we need to learn about the EC2 instances and how you were going to launch an EC2 instances in AWS. I will show you how you were going to launch an EC2 instance in real time. Secondly, you need to know about Elastic Load Balancer (ELB) and Auto Scaling Groups (ASG). Lastly, you need to learn about the steps that are involved in deploying a Nginx Server on EC2 instance and how you were going to start the server and other operations of it.
+To learn about this completely you need to learn about different concepts here. Firstly, we need to learn about the EC2 instances and how you were going to launch an EC2 instances in AWS. I will show you how you were going to launch an EC2 instance in real time. Secondly, you need to know about Elastic Load Balancer (ELB) and Auto Scaling Groups (ASG). Lastly, you need to learn about the steps that are involved in deploying a Nginx Server on EC2 instance and how you were going to start the server and other operations of it.
 
 # Elastic Cloud Compute (EC2):
 Amazon Elastic Compute Cloud (Amazon EC2) offers the broadest and deepest compute platform, with over 750 instances and choice of the latest processor, storage, networking, operating system, and purchase model to help you best match the needs of your workload. They are the first major cloud provider that supports Intel, AMD, and Arm processors, the only cloud with on-demand EC2 Mac instances, and the only cloud with 400 Gbps Ethernet networking. They offer the best price performance for machine learning training, as well as the lowest cost per inference instances in the cloud. More SAP, high performance computing (HPC), ML, and Windows workloads run on AWS than any other cloud.
@@ -76,7 +76,7 @@ Choose a Gateway Load Balancer when you need to deploy and manage a fleet of thi
  
 
 ## Classic Load Balancer: 
-	The Classic Load Balancer distributes incoming application traffic across multiple EC2 instance targets in multiple Availability Zones. This increases the fault tolerance of your applications. 
+The Classic Load Balancer distributes incoming application traffic across multiple EC2 instance targets in multiple Availability Zones. This increases the fault tolerance of your applications. 
  
 
 ## Cross-zone load balancing:
@@ -142,7 +142,6 @@ Nginx is important because it was purposely built for extreme loads and efficien
 
 ## Step-1:
 Launch an EC2 instance by clicking on the __“Launch instance”__ option.
-
  
 ## Step-2:
 Give a name of your wish for your EC2 instance.
@@ -199,7 +198,6 @@ Now come back to load balancer creation and select the target group that which y
 ## Step-18:
 And leave remaining options and select the create __“load balancer option”__.
  
-
 ## Step-19:
 Now you can see your load balancer is in an active state. By clicking on the details of load balancer, you need to copy the DNS-name. 
  
@@ -210,14 +208,12 @@ Now select the Auto Scaling Group on your EC2 instance. And select the __“Crea
  
 ## Step-21:
 In __“Choose launch template”__ enter the name for auto scaling group. And select the __“Create a launch template”__.
- 
 
 ## Step-22:
 In Launch template name and description, you need to give the launch template name.
  
 ## Step-23:
-Here you need to select Amazon Machine Image as Amazon Linux 2023 AMI.
- 
+Here you need to select Amazon Machine Image as Amazon Linux 2023 AMI. 
 
 ## Step-24:
 Select the instance type as t2.micro and key pair as Nginx Tutorial.
@@ -249,14 +245,12 @@ Next in Instance maintenance policy select the __“No policy”__ option.
 ## Step-33:
 Next steps notifications and tags leave it as empty and in the review, step click on __“Create Auto Scale Group”__. 
  
-
 ## Step-34:
 Now you can see that you have successfully created an Auto Scaling Group (ASG).
  
 ## Step-35:
 Now go to instances and select Nginx Instance. After clicking on the connect button. 
  
-
 ## Step-36:
 Now you can see the option __“connect to instance”__. Then choose the connection type as __“connect using EC2 instance connect”__. Leave the username as default i.e. ec2-user. Then click on Connect.
    
@@ -273,18 +267,15 @@ Name=nginx repo
 Baseurl=https://nginx.org/packages/centos/8/$basearch/
 Gpgcheck=0
 Enabled=1__
-
 And you need to give __“:wq”__ to save the file.
  
 Now you can see the output screen as below.
  
-
 ## Step-39: 
 Next you need to give the code i.e. __“sudo yum update”__ and press enter button.
  
 Now the code will run and yum will be updated. Please wait for some time to update. Then you can see the yum update process has completed and it shows all the process had done and complete word to you.
  
-
 ## Step-40:
 Next you need to write the code i.e. __“sudo yum install nginx”__ and press enter. Then you can get the option displaying as __“Is this ok [Y/N]”__ and you need enter Y and press enter key.
  
@@ -314,7 +305,6 @@ To see the html file use __“less index.file”__, then you see the html file a
 ## Step-48:
 Now use __“ifconfig”__ command to see the IP address of your web server.
  
-
 ## Step-49:
 Next go to the instances. Now we are going to request our web server does it working properly or not by copying our instance Public IPv4 address or Private IPv4 address.
  
