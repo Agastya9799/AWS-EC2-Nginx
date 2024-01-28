@@ -258,8 +258,8 @@ Now go to instances and select Nginx Instance. After clicking on the connect but
 Now you can see the option “connect to instance”. Then choose the connection type as “connect using EC2 instance connect”. Leave the username as default i.e. ec2-user. Then click on Connect.
    
 ## Step-37: 
-After that you will get output displaying the “Amazon Linux 2023” and the login details. Now you need to right command after the $. Here you are going to so first step of nginx server installation i.e. you are going to right the command below.
-<b>Sudo vi /etc/yum.repos.d/nginx.repo<b> </br>
+After that you will get output displaying the “Amazon Linux 2023” and the login details. Now you need to right command after the $. Here you are going to so first step of nginx server installation i.e. you are going to right the command below.<--2
+Sudo vi /etc/yum.repos.d/nginx.repo
  
 If the command is executed in the cloud shell, then you get the output that shown in below image.
  
