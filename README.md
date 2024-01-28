@@ -1,4 +1,4 @@
-# AWS-EC2-Nginx
+ # AWS-EC2-Nginx
 Deploy Nginx Server on port 80 in EC2 instance. This instance should be behind the ASG and ELB. For ASG configuration minimum instance is 1, desired is 2 and maximum is 3.
 
 
@@ -65,7 +65,7 @@ There is a key difference in how the load balancer types are configured. With Ap
 ## Application Load Balancer:
 Choose an Application Load Balancer when you need a flexible feature set for your applications with HTTP and HTTPS traffic. Operating at the request level, Application Load Balancers provide advanced routing and visibility features targeted at application architectures, including microservices and containers.
 For an example, if you change your web browser’s language into French, an Application LB has visibility of the metadata it receives from your browser which contains details about the language you use. To optimize your browsing experience, it will then route you to the French-language servers on the backend behind the LB. You can also create advanced request routing, moving traffic into specific servers based on rules that you set yourself for specific cases.
-<img src="https://a.b.cdn.console.awsstatic.com/a/v1/5OBQRLTIGHMRUVN5XLKT5XU3JE4K6GTDZFDK5IPNT3GWUZTYJBOQ/2024-01-23T02-33-43_a88821a4018ec38/Static/591e55b0c20360da58ee3eee136b1fc6.svg">
+<img src="https://a.b.cdn.console.awsstatic.com/a/v1/5OBQRLTIGHMRUVN5XLKT5XU3JE4K6GTDZFDK5IPNT3GWUZTYJBOQ/2024-01-23T02-33-43_a88821a4018ec38/Static/591e55b0c20360da58ee3eee136b1fc6.svg" width="250" height="300">
  
 ## Network Load Balancer:
 Choose a Network Load Balancer when you need ultra-high performance, TLS offloading at scale, centralized certificate deployment, support for UDP, and static IP addresses for your applications. Operating at the connection level, Network Load Balancers are capable of handling millions of requests per second securely while maintaining ultra-low latencies.
