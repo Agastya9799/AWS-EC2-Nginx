@@ -124,11 +124,11 @@ Nginx is important because it was purposely built for extreme loads and efficien
 ### Step-1: Setup Yum repo for RHEL/CENTOS.
 	sudo vi /etc/yum.repos.d/nginx.repo
 ### Step-2: Add the following to the nginx.repo
-[nginx] 
-name=nginx repo	
-baseurl=https://nginx.org/packages/centos/8/$basearch/
-gpgcheck=0
-enabled=1
+	[nginx] 
+	name=nginx repo	
+	baseurl=https://nginx.org/packages/centos/8/$basearch/
+	gpgcheck=0
+	enabled=1
 ### Step-3: Update Yum repo
 	sudo yum update
 ### Step-4: Install NGINX Open source package:
