@@ -259,7 +259,7 @@ Now you can see the option “connect to instance”. Then choose the connection
    
 ## Step-37: 
 After that you will get output displaying the “Amazon Linux 2023” and the login details. Now you need to right command after the $. Here you are going to so first step of nginx server installation i.e. you are going to right the command below.
-<b>Sudo vi /etc/yum.repos.d/nginx.repo<b>
+<b>Sudo vi /etc/yum.repos.d/nginx.repo<b> </br>
  
 If the command is executed in the cloud shell, then you get the output that shown in below image.
  
