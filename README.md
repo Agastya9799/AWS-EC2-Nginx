@@ -57,10 +57,10 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 A load balancer accepts incoming traffic from clients and routes requests to its registered targets (such as EC2 instances) in one or more Availability Zones. The load balancer also monitors the health of its registered targets and ensures that it routes traffic only to healthy targets. When the load balancer detects an unhealthy target, it stops routing traffic to that target. It then resumes routing traffic to that target when it detects that the target is healthy again.
 You configure your load balancer to accept incoming traffic by specifying one or more listeners. A listener is a process that checks for connection requests. It is configured with a protocol and port number for connections from clients to the load balancer. Likewise, it is configured with a protocol and port number for connections from the load balancer to the targets.
 Elastic Load Balancing supports the following types of load balancers:
-•	Application Load Balancers
-•	Network Load Balancers
-•	Gateway Load Balancers
-•	Classic Load Balancers
+* Application Load Balancers
+* Network Load Balancers
+* Gateway Load Balancers
+* Classic Load Balancers
 There is a key difference in how the load balancer types are configured. With Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, you register targets in target groups, and route traffic to the target groups. With Classic Load Balancers, you register instances with the load balancer. 
 ## Application Load Balancer:
 Choose an Application Load Balancer when you need a flexible feature set for your applications with HTTP and HTTPS traffic. Operating at the request level, Application Load Balancers provide advanced routing and visibility features targeted at application architectures, including microservices and containers.
