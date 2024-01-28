@@ -116,22 +116,25 @@ Amazon EC2 Auto Scaling helps you ensure that you have the correct number of Ama
 
 # Auto Scaling groups:
 An Auto Scaling group contains a collection of EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. An Auto Scaling group also lets you use Amazon EC2 Auto Scaling features such as health check replacements and scaling policies. Both maintaining the number of instances in an Auto Scaling group and automatic scaling are the core functionality of the Amazon EC2 Auto Scaling service.
-The size of an Auto Scaling group depends on the number of instances that you set as the desired capacity. You can adjust its size to meet demand, either manually or by using automatic scaling.
-An Auto Scaling group starts by launching enough instances to meet its desired capacity. It maintains this number of instances by performing periodic health checks on the instances in the group. The Auto Scaling group continues to maintain a fixed number of instances even if an instance becomes unhealthy. If an instance becomes unhealthy, the group terminates the unhealthy instance and launches another instance to replace it. 
-You can use scaling policies to increase or decrease the number of instances in your group dynamically to meet changing conditions. When the scaling policy is in effect, the Auto Scaling group adjusts the desired capacity of the group, between the minimum and maximum capacity values that you specify and launches or terminates the instances as needed. You can also scale on a schedule. 
-When creating an Auto Scaling group, you can choose whether to launch On-Demand Instances, Spot Instances, or both. You can specify multiple purchase options for your Auto Scaling group only when you use a launch template.
+<p>The size of an Auto Scaling group depends on the number of instances that you set as the desired capacity. You can adjust its size to meet demand, either manually or by using automatic scaling.</p>
+<p>An Auto Scaling group starts by launching enough instances to meet its desired capacity. It maintains this number of instances by performing periodic health checks on the instances in the group. The Auto Scaling group continues to maintain a fixed number of instances even if an instance becomes unhealthy. If an instance becomes unhealthy, the group terminates the unhealthy instance and launches another instance to replace it.</p>
+<p>You can use scaling policies to increase or decrease the number of instances in your group dynamically to meet changing conditions. When the scaling policy is in effect, the Auto Scaling group adjusts the desired capacity of the group, between the minimum and maximum capacity values that you specify and launches or terminates the instances as needed. You can also scale on a schedule.</p> 
+<p>When creating an Auto Scaling group, you can choose whether to launch On-Demand Instances, Spot Instances, or both. You can specify multiple purchase options for your Auto Scaling group only when you use a launch template.</p>
+
 Spot Instances provide you with access to unused EC2 capacity at steep discounts relative to On-Demand prices There are key differences between Spot Instances and On-Demand Instances:
 * The price for Spot Instances varies based on demand.
 * Amazon EC2 can terminate an individual Spot Instance as the availability of, or price for, Spot Instances changes.
-When a Spot Instance is terminated, the Auto Scaling group attempts to launch a replacement instance to maintain the desired capacity for the group.
-When instances are launched, if you specify multiple Availability Zones, the desired capacity is distributed across these Availability Zones. If a scaling action occurs, Amazon EC2 Auto Scaling automatically maintains balance across all the Availability Zones that you specify.
+
+<p>When a Spot Instance is terminated, the Auto Scaling group attempts to launch a replacement instance to maintain the desired capacity for the group.</p>
+<p>When instances are launched, if you specify multiple Availability Zones, the desired capacity is distributed across these Availability Zones. If a scaling action occurs, Amazon EC2 Auto Scaling automatically maintains balance across all the Availability Zones that you specify.</p>
 
 # Nginx Server:
 Nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. 
-Nginx provides high performance for Web servers with massive scaling. Nginx can run at high speeds under heavier loads. The reverse proxy feature allows a single site to present aggregated information sources as if they all come from one page. Its load balancer allows loads to be split among different resources such as servers.
-Many prominent companies use Nginx to manage high-traffic pages, including Autodesk, Facebook, Atlassian, LinkedIn, Twitter, Apple, Citrix Systems, Intuit, T-Mobile, GitLab, DuckDuckGo, Target, Intel, Microsoft, IBM, Google, and Cisco.
-Part of the reason Nginx scales so effectively and runs faster than other Web server software -- such as the standard Apache build -- is its more efficient use of processes. Unlike Apache builds, Nginx does not create a process per user. Nginx instead uses a master and worker process structure. The master process controls the worker processes which perform the calculations.
-Nginx is important because it was purposely built for extreme loads and efficiency. The Web server software helps with several aspects of hosting Web site applications and content delivery services. Nginx is the second-most popular Web server software after Apache.
+<p>Nginx provides high performance for Web servers with massive scaling. Nginx can run at high speeds under heavier loads. The reverse proxy feature allows a single site to present aggregated information sources as if they all come from one page. Its load balancer allows loads to be split among different resources such as servers.</p>
+<p>Many prominent companies use Nginx to manage high-traffic pages, including Autodesk, Facebook, Atlassian, LinkedIn, Twitter, Apple, Citrix Systems, Intuit, T-Mobile, GitLab, DuckDuckGo, Target, Intel, Microsoft, IBM, Google, and Cisco.</p>
+<p>Part of the reason Nginx scales so effectively and runs faster than other Web server software -- such as the standard Apache build -- is its more efficient use of processes. Unlike Apache builds, Nginx does not create a process per user. Nginx instead uses a master and worker process structure. The master process controls the worker processes which perform the calculations.</p>
+<p>Nginx is important because it was purposely built for extreme loads and efficiency. The Web server software helps with several aspects of hosting Web site applications and content delivery services. Nginx is the second-most popular Web server software after Apache.</p>
+
 ## Installation steps for Nginx Server:
 ### Step-1: Setup Yum repo for RHEL/CENTOS.
 	sudo vi /etc/yum.repos.d/nginx.repo
