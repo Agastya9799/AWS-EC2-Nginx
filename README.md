@@ -174,10 +174,10 @@ In Basic Configuration, you need to give your load balancer name. You need to se
 ![step10](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/fc6677c5-2e63-447c-b268-e4c856b391d3) 
 ## Step-11:
 In network mapping leave the VPC as default and select the Availability Zones at least 2 but here you need to select all three AZs.
- 
+![step11](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/544f2376-28d4-4deb-800f-7bbafea703c8) 
 ## Step-12:
 In security groups, select the security group which you have given to your EC2 instance. And in listeners and routing select the listener as HTTP:80 where HTTP is a protocol and 80 is a port. And also you need to create a new target group for your load balancer.
- 
+![step12](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/dc87de62-f82c-442f-ae33-89e91d4658dd) 
 ## Step-13:
 In basic configuration, choose the target type as __“Instance”__.
  ![step13](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/401e452a-e3c8-4742-89cd-b9ef3077c541)
@@ -195,7 +195,7 @@ Now come back to load balancer creation and select the target group that which y
  ![step17](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/6d6749c1-8337-41a0-9254-77162ce8eb23)
 ## Step-18:
 And leave remaining options and select the create __“load balancer option”__.
- 
+![step18](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/06da42bd-b237-4810-b853-de579b8da11a) 
 ## Step-19:
 Now you can see your load balancer is in an active state. By clicking on the details of load balancer, you need to copy the DNS-name. 
  ![Step-19](https://github.com/Agastya9799/AWS-EC2-Nginx/assets/157515904/206ebefa-2ab2-4cc4-9b64-1e69b1cf6ba0)
